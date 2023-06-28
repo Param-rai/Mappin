@@ -18,7 +18,10 @@ const Login = ({ setShowLogin, myStorage, setCurrentUser }) => {
     };
 
     try {
-      const res = await axios.post("/api/user/login", user);
+      const res = await axios.post(
+        "https://mappin-7xjq.onrender.com/api/user/login",
+        user
+      );
       myStorage.setItem("user", res.data.username);
       setCurrentUser(res.data.username);
       setError(false);

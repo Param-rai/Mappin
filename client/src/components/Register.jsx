@@ -20,7 +20,10 @@ const Register = ({ setShowRegister }) => {
     };
 
     try {
-      await axios.post("/api/user/register", newUser);
+      await axios.post(
+        "https://mappin-7xjq.onrender.com/api/user/register",
+        newUser
+      );
       setError(false);
       setSuccess(true);
     } catch (error) {

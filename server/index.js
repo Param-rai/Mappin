@@ -3,12 +3,14 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import pinRoute from "./routes/pins.js";
 import userRoute from "./routes/users.js";
+import cors from "cors";
 const app = express();
 
 dotenv.config();
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URL, {
